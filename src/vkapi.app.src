@@ -1,0 +1,18 @@
+{application, vkapi,
+ [{description, "Erlang Vkontakte API implementation."},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { vkapi_app, []}},
+  {applications,
+	[kernel,
+	stdlib,
+	jsone,
+	hackney
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {maintainers, ["RomanikVadim @glicone"]},
+  {licenses, ["GPLv3"]},
+  {links, [{"Github","https://github.com/ErlangBoys/vkapi"}]}
+ ]}.
