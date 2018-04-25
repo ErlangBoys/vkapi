@@ -5,7 +5,9 @@ Erlang Vkontakte API implementation.
 ## Usage
 
 First of all create Vk auth_token 
+
 https://oauth.vk.com/authorize?client_id=6460040&display=page&scope=friends,notify,photos,audio,video,messages,wall,offline,groups,docs&response_type=token&v=5.74
+
 And add it to includes/vkapi.hrl, then
 
 ```sh
