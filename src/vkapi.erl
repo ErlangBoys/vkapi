@@ -3,10 +3,10 @@
 -include("includes/vkapi.hrl").
 
 -export([request/2]).
--export([get_all_photos/1]).
+-export([get_all/2]).
 %% wall.get response https://pastebin.com/rpKTjP8Z
 
--spec request(atom()) ->list(). 
+-spec request(atom(),list()) ->list(). 
 request(Method, Params) ->
     BinParams = from_proplist_to_binProplist(Params),
     URL = hackney_url:make_url(?VK_API_URL,
@@ -16,7 +16,7 @@ request(Method, Params) ->
     {ok, _ResultCode, _Result, ClientRef} = hackney:request(get, URL),
     decode_json(ClientRef).	    
 
-get_all_photos(Params) ->
+get_all(Method,Params) ->
     BinParams = from_proplist_to_binProplist(Params),
     URL = hackney_url:make_url(?VK_API_URL,
 			       list_to_binary(Method),
